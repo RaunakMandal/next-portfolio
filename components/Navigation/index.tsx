@@ -9,7 +9,7 @@ export const Navigation = () => {
   return (
     <div className='tw-tabs tw-py-4 tw-justify-center'>
       <Link
-        className={`tw-tab tw-tab-lg tw-tab-lifted ${
+        className={`tw-tab tw-tab-sm md:tw-tab-lg tw-tab-lifted ${
           currentPath === '' ? 'tw-tab-active' : ''
         }`}
         href='/'
@@ -17,7 +17,7 @@ export const Navigation = () => {
         Home
       </Link>
       <Link
-        className={`tw-tab tw-tab-lg tw-tab-lifted ${
+        className={`tw-tab tw-tab-sm md:tw-tab-lg tw-tab-lifted ${
           currentPath === 'about' ? 'tw-tab-active' : ''
         }`}
         href='/about'
@@ -25,7 +25,7 @@ export const Navigation = () => {
         About
       </Link>
       <Link
-        className={`tw-tab tw-tab-lg tw-tab-lifted ${
+        className={`tw-tab tw-tab-sm md:tw-tab-lg tw-tab-lifted ${
           currentPath === 'experience' ? 'tw-tab-active' : ''
         }`}
         href='/experience'
@@ -33,7 +33,7 @@ export const Navigation = () => {
         Experience
       </Link>
       <Link
-        className={`tw-tab tw-tab-lg tw-tab-lifted ${
+        className={`tw-tab tw-tab-sm md:tw-tab-lg tw-tab-lifted ${
           currentPath === 'contact' ? 'tw-tab-active' : ''
         }`}
         href='/contact'

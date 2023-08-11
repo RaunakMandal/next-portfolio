@@ -13,7 +13,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className='tw-flex tw-h-full tw-justify-center'>
         <div className='tw-flex tw-flex-col tw-justify-between tw-w-full'>
           <Navigation />
-          <div className='tw-flex tw-flex-1 tw-justify-center tw-px-12 lg:tw-px-36'>
+          <div className='tw-flex tw-flex-1 tw-justify-center tw-p-8 lg:tw-px-36'>
             {children}
           </div>
         </div>

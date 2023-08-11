@@ -11,7 +11,7 @@ export const Home = () => {
           <Image src={profilePic} alt='Picture of the author' />{' '}
         </div>
       </div>
-      <span className='tw-text-2xl tw-font-bold tw-flex'>
+      <span className='tw-text-2xl tw-font-bold tw-flex tw-items-center'>
         Hi, I am Raunak Mandal I am a Software Engineer at &nbsp;
         <Link
           href='https://www.linkedin.com/company/tealindia/'
@@ -20,6 +20,14 @@ export const Home = () => {
           <Image src={tealLogo} alt='Picture of the author' />
         </Link>
       </span>
+      <div
+        className='tw-tooltip'
+        data-tip='Disabled kyunki I am already working somewhere. Lol! :lolsob:'
+      >
+        <button className='tw-btn hover:cursor-not-allowed' disabled>
+          Hire me
+        </button>
+      </div>
     </div>
   );
 };
