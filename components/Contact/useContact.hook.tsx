@@ -1,17 +1,55 @@
-import { useRef } from 'react';
+import { T_Api_Res_ContactForm } from '@/app/contact/api/route';
+import axios from 'axios';
+import { useRef, useState } from 'react';
 
 export const useContact = () => {
-  const nameRef = useRef(null);
-  const emailRef = useRef(null);
-  const messageRef = useRef(null);
+  const nameRef = useRef<HTMLInputElement>(null);
+  const emailRef = useRef<HTMLInputElement>(null);
+  const messageRef = useRef<HTMLTextAreaElement>(null);
+
+  const [isLoading, setIsLoading] = useState(false);
+  const [success, setSuccess] = useState<string>('');
+  const [error, setError] = useState<string>('');
 
   const handleContactFormSubmit = () => {
-    // console.log('handleContactFormSubmit');
-    if (nameRef.current && emailRef.current && messageRef.current) {
-      //   console.log('nameRef', (nameRef.current as HTMLFormElement).value);
-      //   console.log('emailRef', (emailRef.current as HTMLFormElement).value);
-      //   console.log('messageRef', (messageRef.current as HTMLFormElement).value);
+    setIsLoading(true);
+    setSuccess('');
+    setError('');
+
+    const name = nameRef.current?.value;
+    const email = emailRef.current?.value;
+    const message = messageRef.current?.value;
+
+    if (name && email && message) {
+      axios
+        .post<T_Api_Res_ContactForm>('/contact/api', {
+          name,
+          email,
+          message,
+        })
+        .then((res) => {
+          if (res.status === 200) {
+            setSuccess(res.data.message);
+            nameRef.current!.value = '';
+            emailRef.current!.value = '';
+            messageRef.current!.value = '';
+          }
+        })
+        .catch((err) => {
+          setError(err.response.data.message);
+        })
+        .finally(() => {
+          setIsLoading(false);
+        });
+    } else {
+      setError('Please fill all the fields');
+      setIsLoading(false);
     }
+  };
+
+  const handleFormDataChange = () => {
+    setSuccess('');
+    setError('');
   };
 
   return {
@@ -19,5 +57,9 @@ export const useContact = () => {
     emailRef,
     messageRef,
     handleContactFormSubmit,
+    handleFormDataChange,
+    isLoading,
+    success,
+    error,
   };
 };

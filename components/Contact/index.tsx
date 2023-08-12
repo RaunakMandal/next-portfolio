@@ -3,16 +3,23 @@
 import { ICONS } from '@/core/icons';
 import { useContact } from './useContact.hook';
 
-// const TOOLTIP_MSG = `This form is fully functional. So do not test it out with spammy messages. Thanks!`;
-const TOOLTIP_MSG = `The form is not functional yet.`;
+const TOOLTIP_MSG = `This form is fully functional. So do not test it out with spammy messages. Thanks!`;
 
 export const Contact = () => {
-  const { nameRef, emailRef, messageRef, handleContactFormSubmit } =
-    useContact();
+  const {
+    nameRef,
+    emailRef,
+    messageRef,
+    handleContactFormSubmit,
+    handleFormDataChange,
+    isLoading,
+    success,
+    error,
+  } = useContact();
 
   return (
     <div className='tw-flex tw-flex-col tw-items-center tw-h-full tw-gap-3'>
-      <h1 className='tw-text-4xl tw-font-bold'>Contact</h1>
+      <h1 className='tw-text-2xl tw-font-bold'>Contact</h1>
       <span className='tw-flex tw-items-center tw-gap-0.5'>
         <p className='tw-text-xl tw-font-semibold'>
           Any questions? Let me know in the form below!
@@ -24,7 +31,10 @@ export const Contact = () => {
           {ICONS.info}
         </div>
       </span>
-      <div className='tw-form-control tw-w-full tw-max-w-xs'>
+      <div
+        className='tw-form-control tw-w-full tw-max-w-xs'
+        onChange={handleFormDataChange}
+      >
         <label className='tw-label'>
           <span className='tw-label-text'>What is your name?</span>
         </label>
@@ -53,19 +63,46 @@ export const Contact = () => {
           className='tw-textarea tw-textarea-bordered tw-textarea-lg tw-w-full tw-max-w-xs'
           ref={messageRef}
         ></textarea>
-        <div
-          className='tw-tooltip hover:tw-cursor-not-allowed'
-          data-tip={`Bola na nai chalega.`}
-        >
-          <button
-            className='tw-btn tw-mt-4'
-            onClick={handleContactFormSubmit}
-            disabled
-          >
-            {/* <span className='tw-loading tw-loading-spinner'></span> */}
-            Submit
-          </button>
-        </div>
+        {success && (
+          <div className='tw-alert tw-alert-success tw-mt-4'>
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              className='tw-stroke-current tw-shrink-0 tw-h-6 tw-w-6'
+              fill='none'
+              viewBox='0 0 24 24'
+            >
+              <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                strokeWidth='2'
+                d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z'
+              />
+            </svg>
+            <span>{success}</span>
+          </div>
+        )}
+        {error && (
+          <div className='tw-alert tw-alert-warning tw-mt-4'>
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              className='tw-stroke-current tw-shrink-0 tw-h-6 tw-w-6'
+              fill='none'
+              viewBox='0 0 24 24'
+            >
+              <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                strokeWidth='2'
+                d='M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z'
+              />
+            </svg>
+            <span>{error}</span>
+          </div>
+        )}
+        <button className='tw-btn tw-mt-4' onClick={handleContactFormSubmit}>
+          {isLoading && <span className='tw-loading tw-loading-spinner'></span>}
+          Submit
+        </button>
       </div>
     </div>
   );

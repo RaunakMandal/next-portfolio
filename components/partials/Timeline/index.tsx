@@ -5,7 +5,7 @@ import { Fragment } from 'react';
 
 export const Timeline = ({ experiences }: { experiences: T_Experience[] }) => {
   return (
-    <div className='tw-relative md:tw-w-[60%]'>
+    <div className='tw-relative md:tw-w-[80%]'>
       {experiences.map((experience, index) => (
         <Fragment key={index}>
           <div className='tw-flex'>
@@ -46,7 +46,7 @@ export const Timeline = ({ experiences }: { experiences: T_Experience[] }) => {
                   ))}
                 </div>
               ))}
-              <div className='tw-flex tw-gap-2 tw-flex-wrap'>
+              <div className='tw-flex tw-gap-2 tw-flex-wrap tw-mt-2'>
                 {experience.technologies.map((technology, index) => (
                   <span className='tw-badge tw-badge-lg tw-text-sm' key={index}>
                     {technology}

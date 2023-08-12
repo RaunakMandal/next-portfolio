@@ -34,6 +34,14 @@ export const Navigation = () => {
       </Link>
       <Link
         className={`tw-tab tw-tab-sm md:tw-tab-lg tw-tab-lifted ${
+          currentPath === 'projects' ? 'tw-tab-active' : ''
+        }`}
+        href='/projects'
+      >
+        Projects
+      </Link>
+      <Link
+        className={`tw-tab tw-tab-sm md:tw-tab-lg tw-tab-lifted ${
           currentPath === 'contact' ? 'tw-tab-active' : ''
         }`}
         href='/contact'

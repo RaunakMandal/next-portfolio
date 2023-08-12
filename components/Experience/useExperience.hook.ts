@@ -17,9 +17,9 @@ export const useExperience = () => {
           startDate: '2023-06-19',
           endDate: '2023-07-31',
           description: [
-            'Built microservices for the core product.',
-            'Worked on the frontend of the core product.',
-            'Will add more yeh to aise hi hai.'
+            'Built a microservice to handle bulk uploads of users.',
+            'Built Custom Dashboard for a Financial Institution.',
+            'Built several dashboards for the internal team.',
           ],
         },
       ],
@@ -54,18 +54,46 @@ export const useExperience = () => {
     {
       positions: [
         {
-          position: 'Engineering Intern',
-          startDate: '2022-10-25',
-          endDate: '2023-02-21',
+          position: 'Android Developer Intern',
+          startDate: '2021-06-15',
+          endDate: '2021-10-15',
           description: [
-            'Revamped the View Report page interface, involving major user-facing changes that are used by more than 200 users.',
-            'Understood older AngularJS codes and components and fixed 10+ existing bugs in the app.',
-            'Wrote more than 500+ lines of clean, readable code during the period of the internship.',
+            'Integrated REST APIs for Core Services using Retrofit2 Library.',
+            'Reduced the Image upload time to 0 for the user end by using Android RoomDB.',
+            'Developed several required API endpoints for the backend in NodeJS.',
           ],
         },
       ],
       company: 'Innovacio Technologies',
       location: 'Kolkata, India',
+      mode: 'Remote',
+      technologies: ['Android', 'Java', 'Android SDK', 'REST APIs', 'Retrofit'],
+    },
+    {
+      positions: [
+        {
+          position: 'Senior Editor',
+          startDate: '2020-07-01',
+          endDate: '2022-07-31',
+          description: [
+            'Improved the overall user experience of the website.',
+            'Improved the content and SEO forthe improvement of the website.',
+            'Improved Page Views according to the user’s need as per Google Analytics.',
+          ],
+        },
+        {
+          position: 'Content Writer',
+          startDate: '2019-01-10',
+          endDate: '2020-06-30',
+          description: [
+            'Wrote more than 100+ SEO friendly articles on the website.',
+            'Worked with the team to improve the SEO of the website.',
+            'Studied the Google Analytics and Google Search Console to improve the website.',
+          ],
+        },
+      ],
+      company: 'Tech Burner',
+      location: 'New Delhi, India',
       mode: 'Remote',
       technologies: ['Android', 'Java', 'Android SDK', 'REST APIs', 'Retrofit'],
     },
