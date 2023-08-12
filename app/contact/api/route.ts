@@ -37,7 +37,7 @@ export async function POST(req: Request) {
       from: `Raunak Mandal, <${process.env.EMAIL_LOGIN}>`,
       to: `Raunak Mandal, ${process.env.EMAIL_RAUNAK}`,
       subject: `${name} has reached out!`,
-      text: `Looks like ${name} has reached out!\n\nHere's their message:\n\n${message}.`,
+      text: `Looks like ${name} - ${email} has reached out!\n\nHere's their message:\n\n${message}.`,
     });
 
     return NextResponse.json(
