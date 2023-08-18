@@ -99,7 +99,11 @@ export const Contact = () => {
             <span>{error}</span>
           </div>
         )}
-        <button className='tw-btn tw-mt-4' onClick={handleContactFormSubmit}>
+        <button
+          className='tw-btn tw-mt-4'
+          onClick={handleContactFormSubmit}
+          disabled={isLoading}
+        >
           {isLoading && <span className='tw-loading tw-loading-spinner'></span>}
           Submit
         </button>
