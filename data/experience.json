@@ -2,11 +2,22 @@
   {
     "positions": [
       {
-        "position": "Software Engineer",
-        "startDate": "2023-08-01",
+        "position": "Senior Software Engineer",
+        "startDate": "2025-05-01",
         "endDate": "Present",
         "description": [
           "Working on the Product Engineering team, building and maintaining the core product."
+        ]
+      },
+      {
+        "position": "Software Engineer",
+        "startDate": "2023-08-01",
+        "endDate": "2025-04-30",
+        "description": [
+          "Migrated a legacy platform from Django and React to Next.js and Express, reducing load time by 80% and improving user efficiency by over 50%.",
+          "Implemented Aadhaar and certificate-based digital signatures to accelerate the Legal Report signing process for a team of 20+ lawyers.",
+          "Integrated Razorpay Payment Link and Invoices within the application to facilitate seamless payment capture.",
+          "Revamped multiple microservices to process PDF parsing, Excel file generation, and email handling."
         ]
       },
       {
