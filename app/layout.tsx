@@ -7,13 +7,17 @@ export const metadata: Metadata = {
   description: "Raunak Mandal's personal website",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang='en' className='tw-h-full' data-theme='light'>
-      <body className='tw-flex tw-h-full tw-justify-center'>
-        <div className='tw-flex tw-flex-col tw-justify-between tw-w-full'>
+    <html lang='en' className='h-full'>
+      <body className='flex h-full justify-center'>
+        <div className='flex flex-col justify-between w-full'>
           <Navigation />
-          <div className='tw-flex tw-flex-1 tw-justify-center tw-p-8 lg:tw-px-36'>
+          <div className='flex flex-1 justify-center p-8 lg:px-36'>
             {children}
           </div>
         </div>

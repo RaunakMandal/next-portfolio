@@ -18,56 +18,57 @@ export const Contact = () => {
   } = useContact();
 
   return (
-    <div className='tw-flex tw-flex-col tw-items-center tw-h-full tw-gap-3'>
-      <h1 className='tw-text-2xl tw-font-bold'>Contact</h1>
-      <span className='tw-flex tw-items-center tw-gap-0.5'>
-        <p className='tw-text-xl tw-font-semibold'>
+    <div className='flex flex-col items-center h-full gap-3'>
+      <h1 className='text-2xl font-bold'>Contact</h1>
+      <span className='flex items-center gap-0.5'>
+        <p className='text-xl font-semibold'>
           Any questions? Let me know in the form below!
         </p>
-        <div
-          className='tw-tooltip hover:tw-cursor-pointer'
-          data-tip={TOOLTIP_MSG}
-        >
+        <div className='tooltip hover:cursor-pointer' data-tip={TOOLTIP_MSG}>
           {ICONS.info}
         </div>
       </span>
       <div
-        className='tw-form-control tw-w-full tw-max-w-xs'
+        className='form-control w-full max-w-xs'
         onChange={handleFormDataChange}
       >
-        <label className='tw-label'>
-          <span className='tw-label-text'>What is your name?</span>
-        </label>
-        <input
-          type='text'
-          placeholder='Type your name here'
-          className='tw-input tw-input-bordered tw-w-full tw-max-w-xs'
-          ref={nameRef}
-        />
+        <fieldset className='fieldset'>
+          <legend className='fieldset-legend'>What is your name?</legend>
+          <input
+            type='text'
+            placeholder='Type your name here'
+            className='input input-md'
+            ref={nameRef}
+          />
+        </fieldset>
 
-        <label className='tw-label'>
-          <span className='tw-label-text'>What is your email address?</span>
-        </label>
-        <input
-          type='email'
-          placeholder='Type your email here'
-          className='tw-input tw-input-bordered tw-w-full tw-max-w-xs'
-          ref={emailRef}
-        />
+        <fieldset className='fieldset'>
+          <legend className='fieldset-legend'>
+            What is your email address?
+          </legend>
+          <input
+            type='email'
+            placeholder='Type your email here'
+            className='input input-md'
+            ref={emailRef}
+          />
+        </fieldset>
 
-        <label className='tw-label'>
-          <span className='tw-label-text'>Please write a message!</span>
-        </label>
-        <textarea
-          placeholder='Type your message here'
-          className='tw-textarea tw-textarea-bordered tw-textarea-lg tw-w-full tw-max-w-xs'
-          ref={messageRef}
-        ></textarea>
+        <fieldset className='fieldset'>
+          <legend className='fieldset-legend'>
+            What message would you like to send?
+          </legend>
+          <textarea
+            placeholder='Type your message here'
+            className='textarea textarea-md h-24'
+            ref={messageRef}
+          ></textarea>
+        </fieldset>
         {success && (
-          <div className='tw-alert tw-alert-success tw-mt-4'>
+          <div className='alert alert-success mt-4'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
-              className='tw-stroke-current tw-shrink-0 tw-h-6 tw-w-6'
+              className='stroke-current shrink-0 h-6 w-6'
               fill='none'
               viewBox='0 0 24 24'
             >
@@ -82,10 +83,10 @@ export const Contact = () => {
           </div>
         )}
         {error && (
-          <div className='tw-alert tw-alert-warning tw-mt-4'>
+          <div className='alert alert-warning mt-4'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
-              className='tw-stroke-current tw-shrink-0 tw-h-6 tw-w-6'
+              className='stroke-current shrink-0 h-6 w-6'
               fill='none'
               viewBox='0 0 24 24'
             >
@@ -100,11 +101,11 @@ export const Contact = () => {
           </div>
         )}
         <button
-          className='tw-btn tw-mt-4'
+          className='btn mt-4'
           onClick={handleContactFormSubmit}
           disabled={isLoading}
         >
-          {isLoading && <span className='tw-loading tw-loading-spinner'></span>}
+          {isLoading && <span className='loading loading-spinner'></span>}
           Submit
         </button>
       </div>

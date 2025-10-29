@@ -10,10 +10,8 @@ declare namespace NodeJS {
     ENCRYPTION_KEY: string;
 
     // Email Credentials
-    EMAIL_LOGIN: string;
-    EMAIL_PASSWORD: string;
-    EMAIL_HOST: string;
-    EMAIL_PORT: number;
-    EMAIL_RAUNAK: string;
+    ZEPTOMAIL_HOST_URL: string;
+    ZEPTOMAIL_API_KEY: string;
+    ZEPTOMAIL_FROM_EMAIL: string;
   }
 }

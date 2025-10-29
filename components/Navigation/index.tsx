@@ -7,42 +7,42 @@ export const Navigation = () => {
   const path = usePathname();
   const currentPath = path.split('/')[1];
   return (
-    <div className='tw-tabs tw-py-4 tw-justify-center'>
+    <div className='tabs tabs-box py-4 justify-center'>
       <Link
-        className={`tw-tab tw-tab-sm md:tw-tab-lg tw-tab-lifted ${
-          currentPath === '' ? 'tw-tab-active' : ''
+        className={`tab tab-sm tabs-md tab-lifted ${
+          currentPath === '' ? 'tab-active' : ''
         }`}
         href='/'
       >
         Home
       </Link>
       <Link
-        className={`tw-tab tw-tab-sm md:tw-tab-lg tw-tab-lifted ${
-          currentPath === 'about' ? 'tw-tab-active' : ''
+        className={`tab tab-sm md:tab-lg tab-lifted ${
+          currentPath === 'about' ? 'tab-active' : ''
         }`}
         href='/about'
       >
         About
       </Link>
       <Link
-        className={`tw-tab tw-tab-sm md:tw-tab-lg tw-tab-lifted ${
-          currentPath === 'experience' ? 'tw-tab-active' : ''
+        className={`tab tab-sm md:tab-lg tab-lifted ${
+          currentPath === 'experience' ? 'tab-active' : ''
         }`}
         href='/experience'
       >
         Experience
       </Link>
       <Link
-        className={`tw-tab tw-tab-sm md:tw-tab-lg tw-tab-lifted ${
-          currentPath === 'projects' ? 'tw-tab-active' : ''
+        className={`tab tab-sm md:tab-lg tab-lifted ${
+          currentPath === 'projects' ? 'tab-active' : ''
         }`}
         href='/projects'
       >
         Projects
       </Link>
       <Link
-        className={`tw-tab tw-tab-sm md:tw-tab-lg tw-tab-lifted ${
-          currentPath === 'contact' ? 'tw-tab-active' : ''
+        className={`tab tab-sm md:tab-lg tab-lifted ${
+          currentPath === 'contact' ? 'tab-active' : ''
         }`}
         href='/contact'
       >

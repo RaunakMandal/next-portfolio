@@ -1,8 +1,8 @@
 export const About = () => {
   return (
-    <div className='tw-flex tw-flex-col tw-items-center tw-h-full tw-gap-3'>
-      <h1 className='tw-text-2xl tw-font-bold'>About</h1>
-      <p className='tw-text-xl'>
+    <div className='flex flex-col items-center h-full gap-3'>
+      <h1 className='text-2xl font-bold'>About</h1>
+      <p className='text-xl'>
         In the final year of my Computer Science studies, I&apos;ve had the
         opportunity to delve into various aspects of the field. While my
         experience includes hands-on work with MERN Full Stack applications, I

@@ -6,16 +6,14 @@ import { useProjects } from './useProjects.hook';
 export const Projects = () => {
   const { projects, isLoading, error } = useProjects();
   return (
-    <div className='tw-flex tw-flex-col tw-items-center tw-h-full tw-gap-3'>
-      <h1 className='tw-text-2xl tw-font-bold'>Projects</h1>
-      {isLoading && (
-        <span className='tw-loading tw-loading-ring tw-loading-lg'></span>
-      )}
+    <div className='flex flex-col items-center h-full gap-3'>
+      <h1 className='text-2xl font-bold'>Projects</h1>
+      {isLoading && <span className='loading loading-ring loading-lg'></span>}
       {error && (
-        <div className='tw-alert tw-alert-error'>
+        <div className='alert alert-error'>
           <svg
             xmlns='http://www.w3.org/2000/svg'
-            className='tw-stroke-current tw-shrink-0 tw-h-6 tw-w-6'
+            className='stroke-current shrink-0 h-6 w-6'
             fill='none'
             viewBox='0 0 24 24'
           >

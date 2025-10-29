@@ -1,6 +1,5 @@
+import axios from 'axios';
 import { NextResponse } from 'next/server';
-
-import * as nodemailer from 'nodemailer';
 
 export async function POST(req: Request) {
   const reqq = await req.json();
@@ -15,29 +14,43 @@ export async function POST(req: Request) {
     );
   }
 
-  const transport = nodemailer.createTransport({
-    host: process.env.EMAIL_HOST,
-    port: process.env.EMAIL_PORT,
-    secure: false,
-    auth: {
-      user: process.env.EMAIL_LOGIN,
-      pass: process.env.EMAIL_PASSWORD,
-    },
-  });
-
   try {
-    await transport.sendMail({
-      from: `Raunak Mandal, <${process.env.EMAIL_LOGIN}>`,
-      to: `${name}, ${email}`,
-      subject: `Thanks for reaching out, ${name}!`,
-      text: `Hi ${name},\nThanks for reaching out! I'll get back to you as soon as possible.\n\nIn the meantime, here's a copy of your message:\n${message}.\n\nBest,\nRaunak`,
+    await axios.post(process.env.ZEPTOMAIL_HOST_URL, {
+      "from": {
+        "address": process.env.ZEPTOMAIL_FROM_EMAIL,
+        "name": "Raunak Mandal"
+      },
+      "to": [
+        {
+          "email_address": {
+            "address": email,
+            "name": name
+          }
+        }
+      ],
+      "subject": `Thanks for reaching out, ${name}!`,
+      "htmlbody": `<p>Hi ${name},</p><p>Thanks for reaching out! I'll get back to you as soon as possible.</p><p>In the meantime, here's a copy of your message:</p><blockquote><i>${message}</i></blockquote><p>Best,<br/>Raunak</p>`,
+    }, {
+      headers: { Authorization: `Zoho-enczapikey ${process.env.ZEPTOMAIL_API_KEY}` }
     });
 
-    await transport.sendMail({
-      from: `Raunak Mandal, <${process.env.EMAIL_LOGIN}>`,
-      to: `Raunak Mandal, ${process.env.EMAIL_RAUNAK}`,
-      subject: `${name} has reached out!`,
-      text: `Looks like ${name} - ${email} has reached out!\n\nHere's their message:\n\n${message}.`,
+    await axios.post(process.env.ZEPTOMAIL_HOST_URL, {
+      "from": {
+        "address": process.env.ZEPTOMAIL_FROM_EMAIL,
+        "name": "Raunak Mandal"
+      },
+      "to": [
+        {
+          "email_address": {
+            "address": process.env.ZEPTOMAIL_FROM_EMAIL,
+            "name": "Raunak Mandal"
+          }
+        }
+      ],
+      "subject": `${name} has reached out!`,
+      "htmlbody": `<p>Looks like ${name} - ${email} has reached out!</p><p>Here's their message:</p><blockquote>${message}</blockquote><p>Reply them: <a href="mailto:${email}">Reply</a></p>`,
+    }, {
+      headers: { Authorization: `Zoho-enczapikey ${process.env.ZEPTOMAIL_API_KEY}` }
     });
 
     return NextResponse.json(

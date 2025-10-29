@@ -20,16 +20,15 @@
     "joi": "^17.9.2",
     "mongodb": "^5.7.0",
     "next": "13.4.12",
-    "nodemailer": "^6.9.4",
     "postcss": "8.4.27",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "4.10.1",
-    "tailwindcss": "3.3.3",
+    "tailwindcss": "^4.1.16",
     "typescript": "5.1.6"
   },
   "devDependencies": {
-    "@types/nodemailer": "^6.4.9",
-    "daisyui": "^3.3.1"
+    "@tailwindcss/postcss": "^4.1.16",
+    "daisyui": "^5.3.10"
   }
 }
