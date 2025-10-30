@@ -1,9 +1,6 @@
 'use client';
 
-import { ICONS } from '@/core/icons';
 import { useContact } from './useContact.hook';
-
-const TOOLTIP_MSG = `This form is fully functional. So do not test it out with spammy messages. Thanks!`;
 
 export const Contact = () => {
   const {
@@ -20,16 +17,8 @@ export const Contact = () => {
   return (
     <div className='flex flex-col items-center h-full gap-3'>
       <h1 className='text-2xl font-bold'>Contact</h1>
-      <span className='flex items-center gap-0.5'>
-        <p className='text-xl font-semibold'>
-          Any questions? Let me know in the form below!
-        </p>
-        <div className='tooltip hover:cursor-pointer' data-tip={TOOLTIP_MSG}>
-          {ICONS.info}
-        </div>
-      </span>
       <div
-        className='form-control w-full max-w-xs'
+        className='form-control w-full max-w-xs flex flex-col'
         onChange={handleFormDataChange}
       >
         <fieldset className='fieldset'>
@@ -65,7 +54,7 @@ export const Contact = () => {
           ></textarea>
         </fieldset>
         {success && (
-          <div className='alert alert-success mt-4'>
+          <div className='alert alert-success mt-4 alert-soft'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               className='stroke-current shrink-0 h-6 w-6'
@@ -83,7 +72,7 @@ export const Contact = () => {
           </div>
         )}
         {error && (
-          <div className='alert alert-warning mt-4'>
+          <div className='alert alert-warning mt-4 alert-soft'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               className='stroke-current shrink-0 h-6 w-6'
@@ -101,7 +90,7 @@ export const Contact = () => {
           </div>
         )}
         <button
-          className='btn mt-4'
+          className='btn btn-soft btn-primary mt-4'
           onClick={handleContactFormSubmit}
           disabled={isLoading}
         >

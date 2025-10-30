@@ -4,7 +4,7 @@ import { Navigation } from '@/components/Navigation';
 
 export const metadata: Metadata = {
   title: 'Raunak Mandal',
-  description: "Raunak Mandal's personal website",
+  description: 'Raunak Mandal - Senior Software Engineer',
 };
 
 export default function RootLayout({

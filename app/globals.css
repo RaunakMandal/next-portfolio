@@ -1,4 +1,4 @@
 @import "tailwindcss";
 
 /* Enable daisyUI */
-@plugin "daisyui";
+@plugin "daisyui" { themes: light --default;}

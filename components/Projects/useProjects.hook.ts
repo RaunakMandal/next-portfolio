@@ -1,9 +1,9 @@
 import { T_Project } from '@/core/types/project';
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export const useProjects = () => {
-  const [projects, setProjects] = useState<T_Project[]>([]);
+  const projects = useRef<T_Project[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -14,7 +14,7 @@ export const useProjects = () => {
       .get('/projects/api')
       .then((response) => {
         if (response.status === 200) {
-          setProjects(response.data);
+          projects.current = response.data;
         }
       })
       .catch((error) => {

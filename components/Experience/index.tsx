@@ -11,7 +11,7 @@ export const Experience = () => {
       <h1 className='text-2xl font-bold'>Experience</h1>
       {isLoading && <span className='loading loading-ring loading-lg'></span>}
       {error && (
-        <div className='alert alert-error'>
+        <div className='alert alert-error alert-soft'>
           <svg
             xmlns='http://www.w3.org/2000/svg'
             className='stroke-current shrink-0 h-6 w-6'
