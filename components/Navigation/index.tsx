@@ -1,8 +1,7 @@
 'use client';
 
+import { ICONS } from '@/core/icons';
 import Link from 'next/link';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
-import { MdOutlineCode, MdOutlineMail, MdWorkOutline } from 'react-icons/md';
 
 export const Navigation = () => {
   return (
@@ -10,43 +9,35 @@ export const Navigation = () => {
       <div className='navbar-start'>
         <div className='dropdown'>
           <div tabIndex={0} role='button' className='btn btn-ghost lg:hidden'>
-            <svg
-              xmlns='http://www.w3.org/2000/svg'
-              className='h-5 w-5'
-              fill='none'
-              viewBox='0 0 24 24'
-              stroke='currentColor'
-            >
-              {' '}
-              <path
-                strokeLinecap='round'
-                strokeLinejoin='round'
-                strokeWidth='2'
-                d='M4 6h16M4 12h8m-8 6h16'
-              />{' '}
-            </svg>
+            {ICONS.hamBurger}
           </div>
           <ul
             tabIndex={-1}
             className='menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow'
           >
             <li>
-              <span>
-                <MdWorkOutline />
-                <Link href='/experience'>Experience</Link>
-              </span>
+              <Link href='/experience'>
+                <span className='flex items-center gap-1'>
+                  {ICONS.work}
+                  Experience
+                </span>
+              </Link>
             </li>
             <li>
-              <span>
-                <MdOutlineCode />
-                <Link href='/projects'>Projects</Link>
-              </span>
+              <Link href='/projects'>
+                <span className='flex items-center gap-1'>
+                  {ICONS.code}
+                  Projects
+                </span>
+              </Link>
             </li>
             <li>
-              <span>
-                <MdOutlineMail />
-                <Link href='/contact'>Contact</Link>
-              </span>
+              <Link href='/contact'>
+                <span className='flex items-center gap-1'>
+                  {ICONS.mail}
+                  Contact
+                </span>
+              </Link>
             </li>
           </ul>
         </div>
@@ -59,31 +50,37 @@ export const Navigation = () => {
       <div className='navbar-center hidden lg:flex'>
         <ul className='menu bg-base-200 lg:menu-horizontal rounded-box'>
           <li>
-            <span>
-              <MdWorkOutline />
-              <Link href='/experience'>Experience</Link>
-            </span>
+            <Link href='/experience'>
+              <span className='flex items-center gap-1'>
+                {ICONS.work}
+                Experience
+              </span>
+            </Link>
           </li>
           <li>
-            <span>
-              <MdOutlineCode />
-              <Link href='/projects'>Projects</Link>
-            </span>
+            <Link href='/projects'>
+              <span className='flex items-center gap-1'>
+                {ICONS.code}
+                Projects
+              </span>
+            </Link>
           </li>
           <li>
-            <span>
-              <MdOutlineMail />
-              <Link href='/contact'>Contact</Link>
-            </span>
+            <Link href='/contact'>
+              <span className='flex items-center gap-1'>
+                {ICONS.mail}
+                Contact
+              </span>
+            </Link>
           </li>
         </ul>
       </div>
       <div className='navbar-end gap-2'>
         <Link href='https://www.linkedin.com/in/raunak-mandal' target='_blank'>
-          <FaLinkedin size={24} />
+          {ICONS.linkedin}
         </Link>
         <Link href='https://github.com/RaunakMandal' target='_blank'>
-          <FaGithub size={24} />
+          {ICONS.github}
         </Link>
       </div>
     </div>

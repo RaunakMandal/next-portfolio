@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import profilePic from '../../public/images/raunak.jpg';
 import Link from 'next/link';
-import { MdOutlineFileDownload, MdOutlineWavingHand } from 'react-icons/md';
+import { ICONS } from '@/core/icons';
 
 export const Home = () => {
   return (
@@ -17,7 +17,7 @@ export const Home = () => {
         <Link href='mailto:raunak@raunakmandal.is-a.dev'>
           <button className='btn btn-soft btn-primary'>
             <span className='flex items-center gap-2'>
-              <MdOutlineWavingHand size={24} />
+              {ICONS.wave}
               Hire me
             </span>
           </button>
@@ -25,7 +25,7 @@ export const Home = () => {
         <Link href='/resume/Raunak_Resume_New.pdf' download={true}>
           <button className='btn btn-outline'>
             <span className='flex items-center gap-2'>
-              <MdOutlineFileDownload size={24} />
+              {ICONS.download}
               Download Résumé
             </span>
           </button>

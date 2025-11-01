@@ -61,5 +61,7 @@ export const useContact = () => {
     isLoading,
     success,
     error,
+    setSuccess,
+    setError,
   };
 };
