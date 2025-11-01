@@ -15,7 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en' className='h-full'>
-      <GoogleAnalytics gaId='G-8GG6PKJ7J' />
+      <GoogleAnalytics gaId='G-8GG6PKJ7J5	' />
       <body className='flex h-full justify-center'>
         <div className='flex flex-col justify-between w-full'>
           <Navigation />
