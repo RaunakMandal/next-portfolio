@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import './globals.css';
 import { Navigation } from '@/components/Navigation';
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 export const metadata: Metadata = {
   title: 'Raunak Mandal',
@@ -22,6 +23,7 @@ export default function RootLayout({
           </div>
         </div>
       </body>
+      <GoogleAnalytics gaId='G-8GG6PKJ7J' />
     </html>
   );
 }
