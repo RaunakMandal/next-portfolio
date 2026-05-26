@@ -2,11 +2,21 @@
   {
     "positions": [
       {
-        "position": "Senior Software Engineer",
-        "startDate": "2025-05-01",
+        "position": "Team Lead - Product Delivery",
+        "startDate": "2026-05-01",
         "endDate": "Present",
         "description": [
-          "Working on the Product Engineering team, building and maintaining the core product."
+          "Leading a team of three engineers.",
+          "Converting business requirements to engineering solutions.",
+          "Lots of here and there as well."
+        ]
+      },
+      {
+        "position": "Senior Software Engineer",
+        "startDate": "2025-05-01",
+        "endDate": "2025-04-30",
+        "description": [
+          "Lots of here and there."
         ]
       },
       {
@@ -34,7 +44,12 @@
     "company": "Teal India",
     "location": "Bangalore, India",
     "mode": "Onsite",
-    "technologies": ["Next.js", "React", "TypeScript", "MongoDB"]
+    "technologies": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "MongoDB"
+    ]
   },
   {
     "positions": [
@@ -52,7 +67,11 @@
     "company": "Fyle Technologies",
     "location": "Bangalore, India",
     "mode": "Remote",
-    "technologies": ["AngularJS", "SCSS", "HTML5"]
+    "technologies": [
+      "AngularJS",
+      "SCSS",
+      "HTML5"
+    ]
   },
   {
     "positions": [
@@ -70,7 +89,13 @@
     "company": "Innovacio Technologies",
     "location": "Kolkata, India",
     "mode": "Remote",
-    "technologies": ["Android", "Java", "Android SDK", "REST APIs", "Retrofit"]
+    "technologies": [
+      "Android",
+      "Java",
+      "Android SDK",
+      "REST APIs",
+      "Retrofit"
+    ]
   },
   {
     "positions": [
@@ -98,6 +123,12 @@
     "company": "Tech Burner",
     "location": "New Delhi, India",
     "mode": "Remote",
-    "technologies": ["Android", "Java", "Android SDK", "REST APIs", "Retrofit"]
+    "technologies": [
+      "Android",
+      "Java",
+      "Android SDK",
+      "REST APIs",
+      "Retrofit"
+    ]
   }
 ]
