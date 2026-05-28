@@ -22,7 +22,7 @@ export const Home = () => {
             </span>
           </button>
         </Link>
-        <Link
+        {/* <Link
           href="/resume/Raunak_Resume_New.pdf"
           download={true}
           target="_blank"
@@ -33,7 +33,7 @@ export const Home = () => {
               Download Résumé
             </span>
           </button>
-        </Link>
+        </Link> */}
       </div>
     </div>
   );
