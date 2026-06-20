@@ -14,7 +14,7 @@ export const Home = () => {
       <p className="text-4xl font-bold text-center">Hi, I am Raunak Mandal</p>
       <p className="text-xl text-center">Software Engineer</p>
       <div className="flex gap-4 mt-4">
-        <Link href="mailto:raunak@raunakmandal.is-a.dev">
+        <Link href="mailto:raunak@raunakmandal.com">
           <button className="btn btn-soft btn-primary">
             <span className="flex items-center gap-2">
               {ICONS.wave}
