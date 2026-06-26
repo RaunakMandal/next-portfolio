@@ -1,22 +1,19 @@
-'use client';
-
-import { ICONS } from '@/core/icons';
 import { ProjectsList } from '../partials/ProjectsList';
-import { useProjects } from './useProjects.hook';
+import { PageHeader } from '../partials/PageHeader';
+import { T_Project } from '@/core/types/project';
 
-export const Projects = () => {
-  const { projects, isLoading, error } = useProjects();
+type ProjectsProps = {
+  projects: T_Project[];
+};
+
+export const Projects = ({ projects }: ProjectsProps) => {
   return (
-    <div className='flex flex-col items-center h-full gap-3'>
-      <h1 className='text-2xl font-bold'>Projects</h1>
-      {isLoading && <span className='loading loading-ring loading-lg'></span>}
-      {error && (
-        <div className='alert alert-error alert-soft'>
-          {ICONS.close}
-          <span>{error}</span>
-        </div>
-      )}
-      <ProjectsList projects={projects.current} />
+    <div className='w-full'>
+      <PageHeader
+        title='Projects'
+        subtitle='Side projects and tools I have built to solve real problems.'
+      />
+      <ProjectsList projects={projects} />
     </div>
   );
 };

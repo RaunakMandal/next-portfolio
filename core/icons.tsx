@@ -2,7 +2,9 @@ import {
   MdOutlineCheck,
   MdOutlineClose,
   MdOutlineCode,
+  MdOutlineDarkMode,
   MdOutlineFileDownload,
+  MdOutlineLightMode,
   MdOutlineMail,
   MdOutlineWavingHand,
   MdWorkOutline,
@@ -26,4 +28,6 @@ export const ICONS = {
   download: <MdOutlineFileDownload size={24} />,
   wave: <MdOutlineWavingHand size={24} />,
   check: <MdOutlineCheck />,
+  sun: <MdOutlineLightMode size={20} />,
+  moon: <MdOutlineDarkMode size={20} />,
 };

@@ -1,4 +1,4 @@
-import { T_Api_Res_ContactForm } from '@/app/contact/api/route';
+import { T_Api_Res_ContactForm } from '@/core/types/contact';
 import axios from 'axios';
 import { useRef, useState } from 'react';
 

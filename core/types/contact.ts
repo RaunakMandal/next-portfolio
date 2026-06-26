@@ -3,3 +3,7 @@ export type T_Contact = {
   email: string;
   message: string;
 };
+
+export type T_Api_Res_ContactForm = {
+  message: string;
+};

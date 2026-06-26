@@ -1,6 +1,10 @@
 import axios from 'axios';
 import { NextResponse } from 'next/server';
 
+export function GET() {
+  return NextResponse.json({ error: 'Method not allowed' }, { status: 405 });
+}
+
 export async function POST(req: Request) {
   const reqq = await req.json();
   const { name, email, message } = reqq;
@@ -68,7 +72,3 @@ export async function POST(req: Request) {
     );
   }
 }
-
-export type T_Api_Res_ContactForm = {
-  message: string;
-};

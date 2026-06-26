@@ -1,0 +1,18 @@
+{
+  "linkedin": {
+    "destination": "https://www.linkedin.com/in/raunak-mandal/",
+    "permanent": true
+  },
+  "github": {
+    "destination": "https://github.com/RaunakMandal",
+    "permanent": true
+  },
+  "email": {
+    "destination": "mailto:raunak@raunakmandal.com",
+    "permanent": false
+  },
+  "mail": {
+    "destination": "mailto:raunak@raunakmandal.com",
+    "permanent": false
+  }
+}

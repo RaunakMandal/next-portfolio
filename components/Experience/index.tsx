@@ -1,22 +1,18 @@
-'use client';
-
-import { ICONS } from '@/core/icons';
 import { Timeline } from '../partials/Timeline';
-import { useExperience } from './useExperience.hook';
+import { PageHeader } from '../partials/PageHeader';
+import { T_Experience } from '@/core/types/experience';
 
-export const Experience = () => {
-  const { experiences, isLoading, error } = useExperience();
+type ExperienceProps = {
+  experiences: T_Experience[];
+};
 
+export const Experience = ({ experiences }: ExperienceProps) => {
   return (
-    <div className='flex flex-col items-center h-full gap-3'>
-      <h1 className='text-2xl font-bold'>Experience</h1>
-      {isLoading && <span className='loading loading-ring loading-lg'></span>}
-      {error && (
-        <div className='alert alert-error alert-soft'>
-          {ICONS.close}
-          <span>{error}</span>
-        </div>
-      )}
+    <div className='w-full'>
+      <PageHeader
+        title='Experience'
+        subtitle='Where I have worked and the impact I have made along the way.'
+      />
       <Timeline experiences={experiences} />
     </div>
   );

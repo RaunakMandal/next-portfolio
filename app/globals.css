@@ -1,4 +1,381 @@
 @import "tailwindcss";
 
-/* Enable daisyUI */
-@plugin "daisyui" { themes: light --default;}
+@plugin "daisyui" {
+  themes: portfolio --default, portfolio-light --preferslight;
+}
+
+@plugin "daisyui/theme" {
+  name: "portfolio";
+  default: true;
+  prefersdark: true;
+  color-scheme: dark;
+
+  --color-base-100: oklch(14% 0.008 280);
+  --color-base-200: oklch(18% 0.01 280);
+  --color-base-300: oklch(24% 0.012 280);
+  --color-base-content: oklch(96% 0.005 280);
+
+  --color-primary: oklch(65% 0.17 264);
+  --color-primary-content: oklch(98% 0.005 280);
+
+  --color-secondary: oklch(58% 0.14 264);
+  --color-secondary-content: oklch(98% 0.005 280);
+
+  --color-accent: oklch(72% 0.11 305);
+  --color-accent-content: oklch(14% 0.008 280);
+
+  --color-neutral: oklch(32% 0.012 280);
+  --color-neutral-content: oklch(92% 0.005 280);
+
+  --color-info: oklch(65% 0.14 240);
+  --color-success: oklch(68% 0.14 155);
+  --color-warning: oklch(75% 0.12 75);
+  --color-error: oklch(62% 0.2 25);
+
+  --radius-selector: 0.5rem;
+  --radius-field: 0.5rem;
+  --radius-box: 0.75rem;
+}
+
+@plugin "daisyui/theme" {
+  name: "portfolio-light";
+  preferslight: true;
+  color-scheme: light;
+
+  --color-base-100: oklch(99% 0.003 280);
+  --color-base-200: oklch(96% 0.006 280);
+  --color-base-300: oklch(91% 0.008 280);
+  --color-base-content: oklch(20% 0.02 280);
+
+  --color-primary: oklch(45% 0.17 264);
+  --color-primary-content: oklch(99% 0.003 280);
+
+  --color-secondary: oklch(40% 0.14 264);
+  --color-secondary-content: oklch(99% 0.003 280);
+
+  --color-accent: oklch(52% 0.13 305);
+  --color-accent-content: oklch(99% 0.003 280);
+
+  --color-neutral: oklch(88% 0.008 280);
+  --color-neutral-content: oklch(25% 0.02 280);
+
+  --color-info: oklch(48% 0.14 240);
+  --color-success: oklch(45% 0.14 155);
+  --color-warning: oklch(50% 0.12 75);
+  --color-error: oklch(50% 0.2 25);
+
+  --radius-selector: 0.5rem;
+  --radius-field: 0.5rem;
+  --radius-box: 0.75rem;
+}
+
+@theme {
+  --font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --animate-fade-up: fade-up 0.6s ease-out both;
+  --animate-fade-in: fade-in 0.5s ease-out both;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-shimmer: shimmer 3s ease-in-out infinite;
+  --animate-pulse-glow: pulse-glow 4s ease-in-out infinite;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes shimmer {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.05); }
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+html[data-theme='portfolio-light'] {
+  color-scheme: light;
+}
+
+body {
+  font-family: var(--font-body);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Ambient background mesh */
+[data-theme='portfolio'] .bg-mesh {
+  background-image:
+    radial-gradient(ellipse 80% 60% at 10% 20%, oklch(65% 0.17 264 / 0.09), transparent),
+    radial-gradient(ellipse 60% 50% at 90% 10%, oklch(72% 0.11 305 / 0.07), transparent),
+    radial-gradient(ellipse 50% 40% at 50% 90%, oklch(65% 0.17 264 / 0.04), transparent);
+}
+
+[data-theme='portfolio-light'] .bg-mesh {
+  background-image:
+    radial-gradient(ellipse 80% 60% at 10% 20%, oklch(45% 0.17 264 / 0.07), transparent),
+    radial-gradient(ellipse 60% 50% at 90% 10%, oklch(52% 0.13 305 / 0.06), transparent),
+    radial-gradient(ellipse 50% 40% at 50% 90%, oklch(45% 0.17 264 / 0.03), transparent);
+}
+
+/* Glass card */
+[data-theme='portfolio'] .glass-card {
+  background: oklch(18% 0.01 280 / 0.65);
+  backdrop-filter: blur(12px);
+  border: 1px solid oklch(32% 0.012 280 / 0.5);
+}
+
+[data-theme='portfolio-light'] .glass-card {
+  background: oklch(100% 0 0 / 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid oklch(91% 0.008 280 / 0.9);
+  box-shadow: 0 1px 3px oklch(0% 0 0 / 0.04);
+}
+
+[data-theme='portfolio'] .glass-nav {
+  background: oklch(14% 0.008 280 / 0.85);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid oklch(32% 0.012 280 / 0.4);
+}
+
+[data-theme='portfolio-light'] .glass-nav {
+  background: oklch(99% 0.003 280 / 0.88);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid oklch(91% 0.008 280 / 0.7);
+}
+
+/* Gradient text */
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Profile glow ring */
+[data-theme='portfolio'] .profile-glow {
+  box-shadow:
+    0 0 0 3px oklch(65% 0.17 264 / 0.28),
+    0 0 40px oklch(65% 0.17 264 / 0.12),
+    0 0 80px oklch(72% 0.11 305 / 0.06);
+}
+
+[data-theme='portfolio-light'] .profile-glow {
+  box-shadow:
+    0 0 0 3px oklch(45% 0.17 264 / 0.22),
+    0 0 40px oklch(45% 0.17 264 / 0.1),
+    0 0 80px oklch(52% 0.13 305 / 0.05);
+}
+
+/* Stagger animation delays */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+
+/* Custom scrollbar */
+[data-theme='portfolio'] ::-webkit-scrollbar-track {
+  background: oklch(14% 0.008 280);
+}
+[data-theme='portfolio'] ::-webkit-scrollbar-thumb {
+  background: oklch(32% 0.012 280);
+}
+[data-theme='portfolio'] ::-webkit-scrollbar-thumb:hover {
+  background: oklch(42% 0.014 280);
+}
+
+[data-theme='portfolio-light'] ::-webkit-scrollbar-track {
+  background: oklch(96% 0.006 280);
+}
+[data-theme='portfolio-light'] ::-webkit-scrollbar-thumb {
+  background: oklch(84% 0.008 280);
+}
+[data-theme='portfolio-light'] ::-webkit-scrollbar-thumb:hover {
+  background: oklch(74% 0.01 280);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+}
+
+/* Card hover lift */
+.card-hover {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+[data-theme='portfolio'] .card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px oklch(0% 0 0 / 0.28);
+  border-color: oklch(65% 0.17 264 / 0.28);
+}
+
+[data-theme='portfolio-light'] .card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px oklch(0% 0 0 / 0.07);
+  border-color: oklch(45% 0.17 264 / 0.3);
+}
+
+/* Tech pill */
+[data-theme='portfolio'] .tech-pill {
+  background: oklch(24% 0.012 280 / 0.8);
+  border: 1px solid oklch(32% 0.012 280 / 0.6);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+}
+
+[data-theme='portfolio'] .tech-pill:hover {
+  border-color: oklch(65% 0.17 264 / 0.35);
+  background: oklch(65% 0.17 264 / 0.08);
+}
+
+[data-theme='portfolio-light'] .tech-pill {
+  background: oklch(96% 0.006 280);
+  border: 1px solid oklch(91% 0.008 280);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+}
+
+[data-theme='portfolio-light'] .tech-pill:hover {
+  border-color: oklch(45% 0.17 264 / 0.35);
+  background: oklch(45% 0.17 264 / 0.05);
+}
+
+/* Smooth theme transition */
+html.theme-transition,
+html.theme-transition *,
+html.theme-transition *::before,
+html.theme-transition *::after {
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    color 0.2s ease,
+    box-shadow 0.25s ease !important;
+}
+
+/* Aligned bullet lists */
+.bullet-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.bullet-list li {
+  position: relative;
+  padding-left: 1rem;
+}
+
+.bullet-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 0.375rem;
+  height: 0.375rem;
+  border-radius: 9999px;
+  background: var(--color-primary);
+  transform: translateY(-50%);
+}
+
+/* Status badge dot + label */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  line-height: 1;
+}
+
+.status-badge__dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  flex-shrink: 0;
+  border-radius: 9999px;
+  background: var(--color-success);
+}
+
+.status-badge__label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* Buttons – clean flat style, no light edges */
+.btn {
+  box-shadow: none !important;
+  font-weight: 500;
+}
+
+.btn-primary {
+  background-color: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+  color: var(--color-primary-content) !important;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: color-mix(
+    in oklch,
+    var(--color-primary) 88%,
+    var(--color-base-content)
+  ) !important;
+  border-color: color-mix(
+    in oklch,
+    var(--color-primary) 88%,
+    var(--color-base-content)
+  ) !important;
+}
+
+.btn-outline {
+  background-color: transparent !important;
+  border-color: color-mix(
+    in oklch,
+    var(--color-primary) 55%,
+    transparent
+  ) !important;
+  color: var(--color-primary) !important;
+}
+
+.btn-outline:hover:not(:disabled) {
+  background-color: color-mix(
+    in oklch,
+    var(--color-primary) 12%,
+    transparent
+  ) !important;
+  border-color: var(--color-primary) !important;
+  color: var(--color-primary) !important;
+}
