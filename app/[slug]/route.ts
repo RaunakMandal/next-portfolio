@@ -5,11 +5,16 @@ type RouteContext = {
   params: { slug: string };
 };
 
+const isProduction = process.env.NODE_ENV === 'production';
+
 export function GET(_request: Request, { params }: RouteContext) {
   const redirect = getRedirect(params.slug);
 
   if (!redirect) {
-    return NextResponse.json({ error: 'Redirect not found' }, { status: 404 });
+    return NextResponse.redirect(
+      isProduction ? 'https://raunakmandal.com' : 'http://localhost:3000',
+      { status: 302 }
+    );
   }
 
   return NextResponse.redirect(redirect.destination, {
