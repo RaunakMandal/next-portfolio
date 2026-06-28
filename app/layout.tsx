@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   ...createPageMetadata(),
   icons: {
-    icon: '/favicon.ico',
+    icon: '/site-logo.png',
   },
 };
 

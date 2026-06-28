@@ -45,7 +45,7 @@ export const Contact = () => {
             <input
               type='text'
               placeholder='Your name'
-              className='input input-bordered w-full bg-base-100 border-base-300 focus:border-primary'
+              className='input input-bordered form-field w-full'
               ref={nameRef}
             />
           </fieldset>
@@ -57,7 +57,7 @@ export const Contact = () => {
             <input
               type='email'
               placeholder='you@company.com'
-              className='input input-bordered w-full bg-base-100 border-base-300 focus:border-primary'
+              className='input input-bordered form-field w-full'
               ref={emailRef}
             />
           </fieldset>
@@ -68,7 +68,7 @@ export const Contact = () => {
             </legend>
             <textarea
               placeholder='Tell me about the role or project...'
-              className='textarea textarea-bordered w-full h-32 bg-base-100 border-base-300 focus:border-primary resize-none'
+              className='textarea textarea-bordered form-field w-full h-32 resize-none'
               ref={messageRef}
             />
           </fieldset>
@@ -99,7 +99,9 @@ export const Contact = () => {
         </div>
 
         <div className='mt-7 pt-6 border-t border-base-300/40 text-center'>
-          <p className='text-sm text-base-content/45 mb-2'>Or reach out directly</p>
+          <p className='text-sm text-base-content/45 mb-2'>
+            Or reach out directly
+          </p>
           <Link
             href='mailto:raunak@raunakmandal.com'
             className='inline-flex items-center gap-2 text-primary hover:underline text-sm font-medium'

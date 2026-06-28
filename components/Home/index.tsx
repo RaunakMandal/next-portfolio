@@ -39,16 +39,15 @@ export const Home = () => {
             Hello, world 👋
           </p>
           <h1 className='font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight animate-fade-up delay-200'>
-            I&apos;m{' '}
-            <span className='text-gradient'>Raunak Mandal</span>
+            I&apos;m <span className='text-gradient'>Raunak Mandal</span>
           </h1>
           <p className='mt-4 text-lg sm:text-xl text-base-content/70 animate-fade-up delay-300'>
             AI Software Engineer
           </p>
           <p className='mt-3 text-base text-base-content/50 max-w-xl animate-fade-up delay-300'>
             I build scalable web products that move the needle — from legacy
-            migrations that cut load times by more than 80% to leading engineering teams
-            that ship fast.
+            migrations that cut load times by more than 80% to leading
+            engineering teams that ship fast.
           </p>
 
           <div className='flex flex-wrap gap-3 mt-8 justify-center lg:justify-start animate-fade-up delay-400'>

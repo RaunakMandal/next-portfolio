@@ -3,14 +3,14 @@ export const SITE_URL =
 
 export const SITE_NAME = 'Raunak Mandal';
 
-export const SITE_TITLE = 'Raunak Mandal | Senior Software Engineer';
+export const SITE_TITLE = 'Raunak Mandal | AI Engineer';
 
 export const SITE_DESCRIPTION =
-  'Senior Software Engineer & Team Lead building scalable web products with Next.js, React, and TypeScript. Open to new opportunities.';
+  'AI Software Engineer building scalable web products with Next.js, React, and TypeScript. Open to new opportunities.';
 
 export const SITE_KEYWORDS = [
   'Raunak Mandal',
-  'Senior Software Engineer',
+  'AI Engineer',
   'Team Lead',
   'Full Stack Developer',
   'Next.js',
@@ -18,6 +18,7 @@ export const SITE_KEYWORDS = [
   'TypeScript',
   'Software Engineer Bangalore',
   'Web Developer Portfolio',
+  'AI Engineer Portfolio',
 ];
 
 export const AUTHOR = {
